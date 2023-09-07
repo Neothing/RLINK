@@ -39,6 +39,9 @@ const { Boom } = require("@hapi/boom");
 const chalk = require("chalk");
 const figlet = require("figlet");
 const PhoneNumber = require("awesome-phonenumber");
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 const { Function, Collection, Simple, color } = require("./modules");
 const { serialize, WAConnection } = Simple;
@@ -188,6 +191,19 @@ const RLINK = async () => {
   RLink.sendText = async (id, text, quoted = {}, options = {}) => {
     RLink.sendMessage(id, { text, ...options }, { quoted, ...options });
   };
+
+  RLink.downloadMediaMessage = async (message) => {
+    let mime = (message.msg || message).mimetype || ''
+    let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+    const stream = await downloadContentFromMessage(message, messageType)
+    let buffer = Buffer.from([])
+    for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk])
+    }
+
+    return buffer
+}
+
 
 
   return RLink;

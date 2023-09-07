@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@hapi/boom": "^10.0.1",
     "@whiskeysockets/baileys": "^6.4.0",
     "awesome-phonenumber": "^5.10.0",
@@ -19,14 +20,19 @@
     "chalk": "4.1.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "ffmpeg": "^0.0.4",
     "figlet": "^1.6.0",
     "file-type": "16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "google-it": "^1.6.4",
     "human-readable": "^0.2.1",
     "moment-timezone": "^0.5.43",
     "mongoose": "^7.4.5",
     "pino": "^8.15.0",
     "pono": "^0.0.0",
-    "qrcode": "^1.5.3"
+    "qrcode": "^1.5.3",
+    "wa-sticker-formatter": "^4.4.4",
+    "wikijs": "^6.4.1"
   },
   "devDependencies": {
     "qrcode-terminal": "^0.12.0"

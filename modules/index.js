@@ -13,5 +13,6 @@ module.exports = {
   Collection: require("./Collection"),
   Simple: require('./Simple'),
   color,
-  bgcolor
+  bgcolor,
+  wiki: require("./wiki")
 }
