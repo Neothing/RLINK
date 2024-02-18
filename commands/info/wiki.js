@@ -36,6 +36,11 @@ module.exports = {
         quality: 70,
         background: "transparent",
       });
+      RLink.sendMessage(
+        m.from,
+        { text: "Please wait...." },
+        { quoted: m }
+      );
       const stickerBuffer2 = await stickerMess.toBuffer();
       RLink.sendMessage(m.from, { sticker: stickerBuffer2 }, { quoted: m });
     } else {
