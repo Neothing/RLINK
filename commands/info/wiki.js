@@ -17,6 +17,11 @@ module.exports = {
         quality: 70,
         background: "transparent",
       });
+      RLink.sendMessage(
+        m.from,
+        { text: "Please wait...." },
+        { quoted: m }
+      );
       const stickerBuffer = await stickerMess.toBuffer();
       RLink.sendMessage(m.from, { sticker: stickerBuffer }, { quoted: m });
     } else if (/video/.test(mime)) {
@@ -38,7 +43,7 @@ module.exports = {
       });
       RLink.sendMessage(
         m.from,
-        { text: "Please wait...." },
+        { text: "Please wait.... Sticker on prosess ☺" },
         { quoted: m }
       );
       const stickerBuffer2 = await stickerMess.toBuffer();
